@@ -3,13 +3,13 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 // If your directory matches the name, you do not need to set archivesBaseName.
-archivesBaseName = "android-oauth-handler"
+archivesBaseName = "base-android"
 
 install {
     repositories.mavenInstaller {
         pom.project {
             group "com.tfc.library"
-            artifactId "android-oauth-handler"
+            artifactId "base-android"
             version "1.0.0"
         }
     }
@@ -23,7 +23,7 @@ bintray {
     // Package info for BinTray
     pkg {
         repo = 'maven'
-        name = 'android-oauth-handler'
+        name = 'base-android'
         userOrg = user
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/LimSungTae/BaseAndroid.git'
