@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
 version = '1.0.1'
 
@@ -15,7 +15,8 @@ install {
             packaging 'aar'
 
             groupId "com.tfc.library"
-            artifactId "base-android"
+            artifactId "library"
+            version '1.0.1'
 
             // Add your description here
             name 'limsungtae.BaseAndroid.BaseAndroid' // pom.project.name must be same as bintray.pkg.name
@@ -25,6 +26,13 @@ install {
                     name 'The Apache Software License, Version 2.0'
                     url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                     distribution 'repo'
+                }
+            }
+            developers {
+                developer {
+                    id 'fobidbumz@gmail.com'
+                    name 'limsungtae'
+                    email 'fobidbumz@naver.com'
                 }
             }
             scm {
@@ -43,9 +51,7 @@ bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
 
-    // jFrog plugin must be declared for this line to work
     configurations = ['archives']
-    // Package info for BinTray
     pkg {
         repo = 'maven'
         name = 'base-android'
