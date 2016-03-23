@@ -2,36 +2,57 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
+version = '0.0.1'
+
 // If your directory matches the name, you do not need to set archivesBaseName.
 archivesBaseName = "base-android"
 
+def siteUrl = 'https://github.com/LimSungTae/BaseAndroid'       // Homepage URL of the library
+def gitUrl = 'https://github.com/LimSungTae/BaseAndroid.git'    // Git repository URL
+group = "com.tfc.library"                                       // Maven Group ID for the artifact
+
 install {
     repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
         pom.project {
-            group "com.tfc.library"
+            packaging 'aar'
+
+            groupId "com.tfc.library"
             artifactId "base-android"
-            version "1.0.0"
+
+            // Add your description here
+            name 'limsungtae.BaseAndroid.BaseAndroid' // pom.project.name must be same as bintray.pkg.name
+            url siteUrl
+            licenses {
+                license { // HARDCODED
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+            scm {
+                connection gitUrl
+                developerConnection gitUrl
+                url siteUrl
+            }
         }
     }
 }
 
 bintray {
-    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
-    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
     // jFrog plugin must be declared for this line to work
     configurations = ['archives']
     // Package info for BinTray
     pkg {
         repo = 'maven'
         name = 'base-android'
-        userOrg = user
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/LimSungTae/BaseAndroid.git'
-        version {
-            name = '0.1'
-            desc = 'Gradle Text Plugin 1.0 final'
-            vcsTag = '0.1'
-        }
+        publish = true
     }
 }
 
@@ -43,7 +64,7 @@ android {
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
     }
     buildTypes {
         release {
