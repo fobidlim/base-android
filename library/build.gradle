@@ -2,10 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = '0.0.1'
-
-// If your directory matches the name, you do not need to set archivesBaseName.
-archivesBaseName = "base-android"
+version = '1.0.1'
 
 def siteUrl = 'https://github.com/LimSungTae/BaseAndroid'       // Homepage URL of the library
 def gitUrl = 'https://github.com/LimSungTae/BaseAndroid.git'    // Git repository URL
@@ -67,7 +64,7 @@ android {
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
-        versionName "0.0.1"
+        versionName "1.0.1"
     }
     buildTypes {
         release {
