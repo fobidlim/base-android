@@ -2,6 +2,24 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
 version = '1.0.2'
 
 def siteUrl = 'https://github.com/LimSungTae/BaseAndroid'       // Homepage URL of the library
@@ -62,22 +80,24 @@ bintray {
     }
 }
 
-android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
 
-    defaultConfig {
-        minSdkVersion 7
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0.2"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
 }
 
 dependencies {
