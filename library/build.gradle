@@ -32,7 +32,7 @@ install {
         pom.project {
             packaging 'aar'
 
-            groupId "com.tfc.library"
+            groupId "com.github.fobid"
             artifactId "library"
             version "0.0.1"
 
