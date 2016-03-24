@@ -10,7 +10,7 @@ android {
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0.3"
+        versionName "0.0.1"
     }
     buildTypes {
         release {
@@ -20,10 +20,10 @@ android {
     }
 }
 
-version = '1.0.3'
+version = '0.0.1'
 
-def siteUrl = 'https://github.com/LimSungTae/BaseAndroid'       // Homepage URL of the library
-def gitUrl = 'https://github.com/LimSungTae/BaseAndroid.git'    // Git repository URL
+def siteUrl = 'https://github.com/fobid/base-android'       // Homepage URL of the library
+def gitUrl = 'https://github.com/fobid/base-android.git'    // Git repository URL
 group = "com.tfc.library"                                       // Maven Group ID for the artifact
 
 install {
@@ -33,11 +33,11 @@ install {
             packaging 'aar'
 
             groupId "com.tfc.library"
-            artifactId "library"
-            version "1.0.3"
+            artifactId "base-android"
+            version "0.0.1"
 
             // Add your description here
-            name 'limsungtae.BaseAndroid.BaseAndroid' // pom.project.name must be same as bintray.pkg.name
+            name 'limsungtae.maven.base-android' // pom.project.name must be same as bintray.pkg.name
             url siteUrl
             licenses {
                 license { // HARDCODED
@@ -49,7 +49,7 @@ install {
             developers {
                 developer {
                     id 'fobidbumz@gmail.com'
-                    name 'limsungtae'
+                    name 'fobid'
                     email 'fobidbumz@naver.com'
                 }
             }

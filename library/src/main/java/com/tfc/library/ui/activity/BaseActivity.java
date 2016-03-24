@@ -10,6 +10,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActivityManager.getInstance().addActivity(this, getActivityTag());
         super.onCreate(savedInstanceState);
     }
+
+    @Override
+    protected void onDestroy() {
+        ActivityManager.getInstance().removeActivity(this, getActivityTag());
+        super.onDestroy();
+    }
+
+    protected abstract String getActivityTag();
 }
