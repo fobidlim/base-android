@@ -10,7 +10,7 @@ android {
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0.2"
+        versionName "1.0.3"
     }
     buildTypes {
         release {
@@ -20,7 +20,7 @@ android {
     }
 }
 
-version = '1.0.2'
+version = '1.0.3'
 
 def siteUrl = 'https://github.com/LimSungTae/BaseAndroid'       // Homepage URL of the library
 def gitUrl = 'https://github.com/LimSungTae/BaseAndroid.git'    // Git repository URL
@@ -34,7 +34,7 @@ install {
 
             groupId "com.tfc.library"
             artifactId "library"
-            version "1.0.2"
+            version "1.0.3"
 
             // Add your description here
             name 'limsungtae.BaseAndroid.BaseAndroid' // pom.project.name must be same as bintray.pkg.name
