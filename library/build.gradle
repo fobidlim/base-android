@@ -2,6 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
+version = '0.0.2'
+
+def siteUrl = 'https://github.com/fobid/base-android'       // Homepage URL of the library
+def gitUrl = 'https://github.com/fobid/base-android.git'    // Git repository URL
+group = "com.github.fobid"                                  // Maven Group ID for the artifact
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -10,7 +16,7 @@ android {
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
-        versionName "0.0.1"
+        versionName "0.0.2"
     }
     buildTypes {
         release {
@@ -20,12 +26,6 @@ android {
     }
 }
 
-version = '0.0.1'
-
-def siteUrl = 'https://github.com/fobid/base-android'       // Homepage URL of the library
-def gitUrl = 'https://github.com/fobid/base-android.git'    // Git repository URL
-group = "com.github.fobid"                                  // Maven Group ID for the artifact
-
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -34,7 +34,7 @@ install {
 
             groupId "com.github.fobid"
             artifactId "library"
-            version "0.0.1"
+            version "0.0.2"
 
             // Add your description here
             name 'limsungtae.maven.base-android' // pom.project.name must be same as bintray.pkg.name
