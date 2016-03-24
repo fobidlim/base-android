@@ -33,7 +33,7 @@ install {
             packaging 'aar'
 
             groupId "com.tfc.library"
-            artifactId "base-android"
+            artifactId "library"
             version "0.0.1"
 
             // Add your description here
