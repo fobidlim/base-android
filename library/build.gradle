@@ -24,7 +24,7 @@ version = '0.0.1'
 
 def siteUrl = 'https://github.com/fobid/base-android'       // Homepage URL of the library
 def gitUrl = 'https://github.com/fobid/base-android.git'    // Git repository URL
-group = "com.tfc.library"                                       // Maven Group ID for the artifact
+group = "com.github.fobid"                                  // Maven Group ID for the artifact
 
 install {
     repositories.mavenInstaller {
