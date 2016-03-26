@@ -1,6 +1,5 @@
 package com.tfc.library.ui.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void startActivity(Class<Activity> clazz) {
+    public void startActivity(Class clazz) {
         startActivity(new Intent(this, clazz));
     }
 
