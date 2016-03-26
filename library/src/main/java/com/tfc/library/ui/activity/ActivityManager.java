@@ -112,6 +112,6 @@ public class ActivityManager {
     }
 
     public Activity getTopActivity() {
-        return mActivityStack.get(0);
+        return mActivityStack.get(mActivityStack.size());
     }
 }
