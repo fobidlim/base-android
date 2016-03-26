@@ -1,5 +1,5 @@
 # Download
-Download [the latest JAR](https://search.maven.org/remote_content?g=com.github.fobid&a=tape&v=LATEST) or grab via Maven:
+Download [the latest JAR](https://repo1.maven.org/maven2/com/github/fobid/library/0.0.3/library-0.0.3.aar) or grab via Maven:
 ```
 <dependency>
   <groupId>com.github.fobid</groupId>
