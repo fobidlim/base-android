@@ -4,12 +4,12 @@ Download [the latest JAR](https://repo1.maven.org/maven2/com/github/fobid/librar
 <dependency>
   <groupId>com.github.fobid</groupId>
   <artifactId>library</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 </dependency>
 ```
 or Gradle:
 ```
-compile 'com.github.fobid:library:0.0.2'
+compile 'com.github.fobid:library:0.0.3'
 ```
 
 # License
