@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'signing'
 
-version = '0.0.3'
+version = '0.0.4'
 
 def siteUrl = 'https://github.com/fobid/base-android'       // Homepage URL of the library
 def gitUrl = 'https://github.com/fobid/base-android.git'    // Git repository URL
@@ -17,7 +17,7 @@ android {
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
-        versionName "0.0.3"
+        versionName "0.0.4"
     }
     buildTypes {
         release {
@@ -73,7 +73,7 @@ uploadArchives {
 
                 groupId "com.github.fobid"
                 artifactId "library"
-                version "0.0.3"
+                version "0.0.4"
 
                 description 'base code for android'
                 url 'https://github.com/fobid/base-android'
@@ -122,7 +122,7 @@ uploadArchives {
 //
 //            groupId "com.github.fobid"
 //            artifactId "library"
-//            version "0.0.3"
+//            version "0.0.4"
 //
 //            // Add your description here
 //            name 'limsungtae.maven.base-android'
