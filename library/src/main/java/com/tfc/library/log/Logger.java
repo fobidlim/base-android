@@ -2,8 +2,6 @@ package com.tfc.library.log;
 
 import android.util.Log;
 
-import com.tfc.library.Config;
-
 /**
  * Created by Fobid on 2016. 3. 25..
  */

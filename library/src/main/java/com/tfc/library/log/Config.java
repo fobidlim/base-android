@@ -1,4 +1,4 @@
-package com.tfc.library;
+package com.tfc.library.log;
 
 /**
  * Created by Fobid on 2016. 3. 25..
