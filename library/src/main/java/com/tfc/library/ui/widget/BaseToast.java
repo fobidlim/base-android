@@ -25,7 +25,7 @@ public class BaseToast {
 
     public static void showText(String text) {
         if (mInstance.mContext == null) {
-            throw new NullPointerException("BaseToast not initializing: Call method BaseToast.init(Context) first.");
+            throw new IllegalStateException("BaseToast is not initialized: Call BaseToast.init(Context) first.");
         }
         if (mInstance.mCurrentToast != null) {
             mInstance.mCurrentToast.cancel();
