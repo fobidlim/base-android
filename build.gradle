@@ -14,11 +14,6 @@ buildscript {
     }
 }
 
-// This is not working fuck
-//plugins {
-//    id "com.jfrog.bintray" version "1.5"
-//}
-
 allprojects {
     repositories {
         jcenter()
