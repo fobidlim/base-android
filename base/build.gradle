@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'signing'
 
-version = '0.0.6'
+version = '0.0.7'
 
 def siteUrl = 'https://github.com/fobid/base-android'       // Homepage URL of the library
 def gitUrl = 'https://github.com/fobid/base-android.git'    // Git repository URL
@@ -17,7 +17,7 @@ android {
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
-        versionName "0.0.6"
+        versionName "0.0.7"
     }
     buildTypes {
         release {
@@ -72,8 +72,8 @@ uploadArchives {
                 packaging 'aar'
 
                 groupId "com.github.fobid"
-                artifactId "library"
-                version "0.0.6"
+                artifactId "base"
+                version "0.0.7"
 
                 description 'base code for android'
                 url 'https://github.com/fobid/base-android'
@@ -102,55 +102,6 @@ uploadArchives {
     }
 }
 
-
-//install {
-//    repositories.mavenInstaller {
-//        def ossUser = properties.getProperty("ossrh.username");
-//        def ossPassword = properties.getProperty("ossrh.password"); ;
-//
-//        repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-//            authentication(userName: ossUser, password: ossPassword)
-//        }
-//
-//        snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-//            authentication(userName: ossUser, password: ossPassword)
-//        }
-//
-//        // This generates POM.xml with proper parameters
-//        pom.project {
-//            packaging 'aar'
-//
-//            groupId "com.github.fobid"
-//            artifactId "library"
-//            version "0.0.6"
-//
-//            // Add your description here
-//            name 'limsungtae.maven.base-android'
-//            // pom.project.name must be same as bintray.pkg.name
-//            url siteUrl
-//            licenses {
-//                license { // HARDCODED
-//                    name 'The Apache Software License, Version 2.0'
-//                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-//                    distribution 'repo'
-//                }
-//            }
-//            developers {
-//                developer {
-//                    id 'fobid'
-//                    name 'fobid'
-//                    email 'fobidbumz@naver.com'
-//                }
-//            }
-//            scm {
-//                connection gitUrl
-//                developerConnection gitUrl
-//                url siteUrl
-//            }
-//        }
-//    }
-//}
-
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
@@ -158,7 +109,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = 'maven'
-        name = 'base-android'
+        name = 'base'
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ['Apache-2.0']
@@ -167,7 +118,7 @@ bintray {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
 }

@@ -18,9 +18,6 @@ package com.tfc.library.ui.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.CallSuper;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tfc.library.log.Logger;
@@ -30,7 +27,6 @@ import com.tfc.library.log.Logger;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    @CallSuper
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.d(getActivityTag(), "onCreate");
@@ -39,7 +35,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-    @CallSuper
     @Override
     protected void onDestroy() {
         Logger.d(getActivityTag(), "onDestroy");
@@ -47,19 +42,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void startActivity(@NonNull Class<? extends Activity> clazz) {
+    public void startActivity( Class<? extends Activity> clazz) {
         startActivity(clazz, null, false);
     }
 
-    public void startActivity(@NonNull Class<? extends Activity> clazz, @Nullable Bundle bundle) {
+    public void startActivity(Class<? extends Activity> clazz, Bundle bundle) {
         startActivity(clazz, bundle, false);
     }
 
-    public void startActivity(@NonNull Class<? extends Activity> clazz, boolean finish) {
+    public void startActivity( Class<? extends Activity> clazz, boolean finish) {
         startActivity(clazz, null, finish);
     }
 
-    public void startActivity(@NonNull Class<? extends Activity> clazz, @Nullable Bundle bundle, boolean finish) {
+    public void startActivity(Class<? extends Activity> clazz,Bundle bundle, boolean finish) {
         Intent intent = new Intent(this, clazz);
         if (bundle != null) {
             intent.putExtras(bundle);
@@ -71,7 +66,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    public void startActivity(@NonNull Class<? extends Activity> clazz, int flags, @Nullable Bundle bundle, boolean finish) {
+    public void startActivity( Class<? extends Activity> clazz, int flags, Bundle bundle, boolean finish) {
         Intent intent = new Intent(this, clazz);
         intent.addFlags(flags);
         if (bundle != null) {

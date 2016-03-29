@@ -31,9 +31,9 @@ public class DisplayUtils {
 
     private static final String TAG = DisplayUtils.class.getSimpleName();
 
-    /**
-     * 화면의 넓이를 반환한다.
-     */
+//    /**
+//     * 화면의 넓이를 반환한다.
+//     */
     @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
     public static int getWidth(Context context) {
@@ -53,11 +53,11 @@ public class DisplayUtils {
         return result;
     }
 
-    /**
-     * 화면의 높이를 반환한다.
-     *
-     * @see 안드로이드의 상태바까지 합한 높이가 반환됨
-     */
+//    /**
+//     * 화면의 높이를 반환한다.
+//     *
+//     * @see 안드로이드의 상태바까지 합한 높이가 반환됨
+//     */
     @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
     public static int getHeight(Context context) {
@@ -77,9 +77,9 @@ public class DisplayUtils {
         return result;
     }
 
-    /**
-     * 상태바의 높이를 반환한다.
-     */
+//    /**
+//     * 상태바의 높이를 반환한다.
+//     */
     public static int getStatusBarHeight(Context context) {
         int result = 0;
         int resourceId = context.getResources().getIdentifier(
@@ -92,9 +92,9 @@ public class DisplayUtils {
         return result;
     }
 
-    /**
-     * 상태바를 제외한 화면의 높이를 반환한다.
-     */
+//    /**
+//     * 상태바를 제외한 화면의 높이를 반환한다.
+//     */
     public static int getHeightExcludeStatusBarHeight(Context context) {
         return getHeight(context) - getStatusBarHeight(context);
     }

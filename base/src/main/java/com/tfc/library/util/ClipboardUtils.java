@@ -24,12 +24,12 @@ import android.content.Context;
  */
 public class ClipboardUtils {
 
-    /**
-     * Clipboard에 text를 저장해주는 메소드.
-     *
-     * @param text
-     *            Clipboard에 저장할 text.
-     */
+//    /**
+//     * Clipboard에 text를 저장해주는 메소드.
+//     *
+//     * @param text
+//     *            Clipboard에 저장할 text.
+//     */
     @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
     public static void copyText(Context context, String text) {
