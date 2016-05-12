@@ -1,15 +1,15 @@
 # Download
-Download [the latest JAR](https://repo1.maven.org/maven2/com/github/fobid/library/0.0.3/library-0.0.3.aar) or grab via Maven:
+Download [the latest JAR](https://repo1.maven.org/maven2/com/github/fobid/base/0.0.7/base-0.0.7.aar) or grab via Maven:
 ```
 <dependency>
   <groupId>com.github.fobid</groupId>
-  <artifactId>library</artifactId>
-  <version>0.0.3</version>
+  <artifactId>base</artifactId>
+  <version>0.0.7</version>
 </dependency>
 ```
 or Gradle:
 ```
-compile 'com.github.fobid:library:0.0.3'
+compile 'com.github.fobid:library:0.0.7'
 ```
 
 # License
