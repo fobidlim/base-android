@@ -15,9 +15,12 @@
  */
 package com.tfc.library.util;
 
-import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.ClipData;
+import android.content.ClipDescription;
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.os.Build;
 
 /**
  * author @Fobid
@@ -30,18 +33,48 @@ public class ClipboardUtils {
 //     * @param text
 //     *            Clipboard에 저장할 text.
 //     */
-    @SuppressLint("NewApi")
-    @SuppressWarnings("deprecation")
-    public static void copyText(Context context, String text) {
-        if (android.os.Build.VERSION.SDK_INT < 11) {
-            android.text.ClipboardManager cm = (android.text.ClipboardManager) context
-                    .getSystemService(Context.CLIPBOARD_SERVICE);
-            cm.setText(text);
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+public static void copyText(Context context, String text) {
+    ClipboardManager cm = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+        ClipData clip = ClipData.newPlainText("", text);
+        cm.setPrimaryClip(clip);
+    } else {
+        //noinspection deprecation
+        cm.setText(text);
+    }
+}
+
+    public static boolean hasText(Context context) {
+        ClipboardManager cm = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            ClipDescription description = cm.getPrimaryClipDescription();
+            ClipData clipData = cm.getPrimaryClip();
+            return clipData != null
+                    && description != null
+                    && (description.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN));
         } else {
-            android.content.ClipboardManager cm = (android.content.ClipboardManager) context
-                    .getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("", text);
-            cm.setPrimaryClip(clip);
+            //noinspection deprecation
+            return cm.hasText();
+        }
+    }
+
+    public static CharSequence getText(Context context) {
+        ClipboardManager cm = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            ClipDescription description = cm.getPrimaryClipDescription();
+            ClipData clipData = cm.getPrimaryClip();
+            if (clipData != null && description != null && description.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
+                return clipData.getItemAt(0).getText();
+            } else {
+                return "";
+            }
+        } else {
+            //noinspection deprecation
+            return cm.getText();
         }
     }
 }
